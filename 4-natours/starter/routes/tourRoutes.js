@@ -1,7 +1,7 @@
 const express = require('express');
 const tourController = require('./../controllers/tourController');
 const authController = require('./../controllers/authController');
-
+const reviewRouter = require('./../routes/reviewRoutes');
 const router = express.Router();
 
 // router.param('id', tourController.checkID);
@@ -34,4 +34,5 @@ router
 // app.patch('/api/v1/tours/:id', updateTour);
 // app.delete('/api/v1/tours/:id', deleteTour);
 
+router.use('/:tourId/reviews', reviewRouter);
 module.exports = router;
