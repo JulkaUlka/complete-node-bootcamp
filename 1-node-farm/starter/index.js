@@ -3,7 +3,6 @@ const url = require("url");
 const fs = require("fs");
 
 const slugify = require("slugify");
-
 const replaceTemplate = require("./modules/replaceTemplate");
 
 const tempOverview = fs.readFileSync(
@@ -56,6 +55,6 @@ const server = http.createServer((req, res) => {
     res.end("<h1>Page not found</h1>");
   }
 });
-server.listen(3000, "localhost", () => {
+server.listen(3000, "127.0.0.1", () => {
   console.log("Listening to req on port");
 });
